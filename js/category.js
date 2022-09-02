@@ -35,11 +35,11 @@ const viewNews = newsData => {
     console.log(newsData);
     newsData.forEach(news => {
         const div = document.createElement('div');
-        const {author,details,image_url,title,total_view} = news;
+        const {author,details,image_url,_id,title,total_view} = news;
         div.innerHTML =`
-        <a
-            href="#"
-            class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:w-10/12 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mx-auto p-5 m-5"
+        <label
+            class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:w-10/12 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mx-auto p-5 m-5"         
+            for="my-modal"
           >
             <img
               class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
@@ -56,7 +56,8 @@ const viewNews = newsData => {
                 ${details.slice(0,150)? details.slice(0,150)+"..." : details}
               </p>
             </div>
-          </a>
+            
+          </label>
         `;
         newsDisplay.appendChild(div);
     })
