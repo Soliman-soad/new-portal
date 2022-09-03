@@ -20,7 +20,7 @@ const viewCategory = categoryData => {
     } )
 }
 
-const loadNews = category_id  => {
+const loadNews = (category_id)  => {
     // Spinner section
     document.getElementById('spinner').style.display= "block"; 
     const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
@@ -30,12 +30,15 @@ const loadNews = category_id  => {
     .catch(error => console.log(error))
 }
 
-const viewNews = newsData => {
+const viewNews = (newsData) => {
     const newsDisplay = document.getElementById('news');
     newsDisplay.innerHTML ="";
     newsData.sort((a,b)=>{
-      return b.total_view - a.total_view;
-    })
+        return b.total_view - a.total_view;
+      })
+    
+    
+      
     document.getElementById('spinner').style.display= "none";
     document.getElementById('count').innerText = newsData.length
     newsData.forEach(news => {
@@ -135,3 +138,4 @@ function blogHide(){
 
 loadNews('08')
 loadData()
+
