@@ -22,7 +22,9 @@ const viewCategory = categoryData => {
 }
 
 const loadNews = category_id  => {
-    const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`
+    // Spinner section
+    document.getElementById('spinner').style.display= "block"; 
+    const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
     fetch(url)
     .then(res => res.json())
     .then(data => viewNews(data.data))
@@ -33,6 +35,7 @@ const viewNews = newsData => {
     const newsDisplay = document.getElementById('news');
     newsDisplay.innerHTML ="";
     console.log(newsData);
+    document.getElementById('spinner').style.display= "none";
     newsData.forEach(news => {
         const div = document.createElement('div');
         const {author,details,image_url,_id,title,total_view} = news;
