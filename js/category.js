@@ -7,7 +7,6 @@ const loadData = () => {
 
 const viewCategory = categoryData => {
     const categoryDisplay = document.getElementById('category');
-    console.log(categoryData);
     const category =[];
     categoryData.forEach(data => {
         const{category_name,category_id} = data;                    
@@ -37,7 +36,6 @@ const viewNews = newsData => {
     newsData.sort((a,b)=>{
       return b.total_view - a.total_view;
     })
-    console.log(newsData);
     document.getElementById('spinner').style.display= "none";
     document.getElementById('count').innerText = newsData.length
     newsData.forEach(news => {
