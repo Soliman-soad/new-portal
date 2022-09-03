@@ -21,7 +21,7 @@ const viewCategory = categoryData => {
     } )
 }
 
-const loadNews = (category_id) => {
+const loadNews = category_id  => {
     const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`
     fetch(url)
     .then(res => res.json())
@@ -37,12 +37,11 @@ const viewNews = newsData => {
         const div = document.createElement('div');
         const {author,details,image_url,_id,title,total_view} = news;
         div.innerHTML =`
-        <label
+        <div
             class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:w-10/12 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mx-auto p-5 m-5"         
-            for="my-modal"
           >
             <img
-              class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+              class="object-cover w-full h-96 rounded-t-lg md:h-80 md:w-96 md:rounded-none md:rounded-l-lg"
               src="${image_url}"
               alt=""
             />
@@ -53,16 +52,51 @@ const viewNews = newsData => {
                 ${title}
               </h5>
               <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                ${details.slice(0,150)? details.slice(0,150)+"..." : details}
+                ${details.slice(0,250)? details.slice(0,250)+"..." : details}
               </p>
+                <div class="flex justify-between w-9/12">
+                  <div class="flex">
+                    <img src="${author.img}" class="w-8 rounded-xl m-2">
+                    <div class="text-white">
+                      <h4 class="text-lg font-bold"> ${author.name ? author.name :"N/A"} </h4>
+                      <p>${author.published_date ? author.published_date : "N/A" }</p>
+                    </div>
+                  </div>
+                  <div class='text-white text-lg text-bold flex items-center'>
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                  <h4 class=" m-2">${total_view ? total_view : "N/A"}</h4>
+                  </div>
+                </div>
+                <label for="${_id}" class="btn modal-button m-5">Read Full news</label>
             </div>
             
-          </label>
+            
+            
+            <input type="checkbox" id="${_id}" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box">
+                  <h3 class="font-bold text-lg">
+                  ${title}
+                  </h3>
+                  <img
+              class="object-cover w-full h-96 rounded-t-lg md:h-80 md:w-96 "
+              src="${image_url}"
+              alt=""
+            />
+                  <p class="py-4">
+                    ${details}
+                  </p>
+                  <div class="modal-action">
+                    <label for="${_id}" class="btn">Cancel</label>
+                  </div>
+                </div>
+              </div>
+          </div>
         `;
         newsDisplay.appendChild(div);
     })
     
 
 }
-
+loadNews('08')
 loadData()
