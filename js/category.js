@@ -65,12 +65,12 @@ const viewNews = (newsData) => {
                 <div class="flex justify-between w-9/12">
                   <div class="flex">
                     <img src="${author.img}" class="w-8 rounded-xl m-2">
-                    <div class="text-white">
+                    <div class="text-black md:text-white">
                       <h4 class="text-lg font-bold"> ${author.name ? author.name :"N/A"} </h4>
                       <p>${author.published_date ? author.published_date : "N/A" }</p>
                     </div>
                   </div>
-                  <div class='text-white text-lg text-bold flex items-center'>
+                  <div class='text-black md:text-white text-lg text-bold flex items-center'>
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                   <h4 class=" m-2">${total_view ? total_view : "No views"}</h4>
                   </div>
