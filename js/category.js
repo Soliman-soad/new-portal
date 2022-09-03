@@ -34,6 +34,9 @@ const loadNews = category_id  => {
 const viewNews = newsData => {
     const newsDisplay = document.getElementById('news');
     newsDisplay.innerHTML ="";
+    newsData.sort((a,b)=>{
+      return b.total_view - a.total_view;
+    })
     console.log(newsData);
     document.getElementById('spinner').style.display= "none";
     document.getElementById('count').innerText = newsData.length
