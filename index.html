@@ -79,6 +79,7 @@
                   href="#"
                   class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
                   aria-current="page"
+                  onclick="blogHide()"
                   >News</a
                 >
               </li>
@@ -86,7 +87,8 @@
                 <a
                   href="#"
                   class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                  ><label for="my-modal" class="modal-button">Blog</label></a
+                  onclick="blogShow()"
+                  >Blog</a
                 >
               </li>
               <li>
@@ -106,6 +108,7 @@
         <div
           id="category"
           class="flex flex-col md:flex-row justify-between p-5 text-xl text-gray-600"
+          onclick="blogHide()"
         ></div>
       </section>
       <!-- category section end  -->
@@ -132,16 +135,10 @@
           <span class="sr-only">Loading...</span>
         </div>
       </div>
-      <!-- news section start -->
-      <section>
-        <div id="news" class="my-10 mx-auto"></div>
-      </section>
-      <!-- news section end -->
 
-      <!-- model section start -->
-      <input type="checkbox" id="my-modal" class="modal-toggle" />
-      <div class="modal">
-        <div class="modal-box">
+      <!-- blog section start -->
+      <div class="w-10/12 mx-auto p-5 hidden" id="blog">
+        <div>
           <h3 class="font-bold text-lg">
             Difference between var, let and const keywords in JavaScript
           </h3>
@@ -184,11 +181,18 @@
             older versions of JavaScript. It allows us to create strings that
             are complex and contain dynamic elements.
           </p>
-          <div class="modal-action">
-            <label for="my-modal" class="btn">Cancel</label>
-          </div>
         </div>
       </div>
+      <!-- blog section end -->
+
+      <!-- news section start -->
+      <section>
+        <div id="news" class="my-10 mx-auto"></div>
+      </section>
+      <!-- news section end -->
+
+      <!-- model section start -->
+
       <!-- model section end -->
     </main>
     <script src="./js/category.js"></script>

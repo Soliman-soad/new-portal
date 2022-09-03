@@ -101,5 +101,13 @@ const viewNews = newsData => {
     
 
 }
+
+function blogShow(){
+  document.getElementById('blog').style.display= "block";
+}
+function blogHide(){
+  document.getElementById('blog').style.display= "none";
+}
+
 loadNews('08')
 loadData()
