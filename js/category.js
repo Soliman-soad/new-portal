@@ -123,13 +123,13 @@ const viewNews = (newsData) => {
 
 }
 
-function blogShow(){
+const blogShow=()=>{
   document.getElementById('blog').style.display= "block";
   document.getElementById('news').style.display="none"
   document.getElementById('category').style.display="none"
   document.getElementById('total-news').style.display="none"
 }
-function blogHide(){
+const blogHide =()=>{
   document.getElementById('blog').style.display= "none";
   document.getElementById('news').style.display="block"
   document.getElementById('category').style.display="flex"
