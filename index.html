@@ -86,7 +86,7 @@
                 <a
                   href="#"
                   class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                  >Blog</a
+                  ><label for="my-modal" class="modal-button">Blog</label></a
                 >
               </li>
               <li>
@@ -139,7 +139,56 @@
       <!-- news section end -->
 
       <!-- model section start -->
-
+      <input type="checkbox" id="my-modal" class="modal-toggle" />
+      <div class="modal">
+        <div class="modal-box">
+          <h3 class="font-bold text-lg">
+            Difference between var, let and const keywords in JavaScript
+          </h3>
+          <p class="py-4">
+            The scope of a var variable is functional scope.The scope of a let
+            variable is block scope.The scope of a const variable is block
+            scope.It can be updated and re-declared into the scope.It can be
+            updated but cannot be re-declared into the scope.It cannot be
+            updated or re-declared into the scope.
+          </p>
+          <h3 class="font-bold text-lg">
+            What is the Difference between arrow function and regular function ?
+          </h3>
+          <p class="py-4">
+            Regular functions created using function declarations or expressions
+            are constructible and callable. Since regular functions are
+            constructible, they can be called using the new keyword. However,
+            the arrow functions are only callable and not constructible, i.e
+            arrow functions can never be used as constructor functions.
+          </p>
+          <h3 class="font-bold text-lg">
+            What's the difference .forEach(), .map(), .filter() and find()?
+          </h3>
+          <p class="py-4">
+            .forEach(), is used to execute the same code on every element in an
+            array but does not change the array and it returns undefined..map()
+            executes the same code on every element in an array and returns a
+            new array with the updated elements..filter() checks every element
+            in an array to see if it meets a certain criteria and returns a new
+            array with the elements that return truthy for the criteria.Find()
+            will give just one return and first value that match.
+          </p>
+          <h3 class="font-bold text-lg">
+            What is template string in JavaScript?
+          </h3>
+          <p class="py-4">
+            Template strings are a powerful feature of modern JavaScript
+            released in ES6. It lets us insert/interpolate variables and
+            expressions into strings without needing to concatenate like in
+            older versions of JavaScript. It allows us to create strings that
+            are complex and contain dynamic elements.
+          </p>
+          <div class="modal-action">
+            <label for="my-modal" class="btn">Cancel</label>
+          </div>
+        </div>
+      </div>
       <!-- model section end -->
     </main>
     <script src="./js/category.js"></script>
